@@ -153,15 +153,30 @@ export default function MarketWidgets({ articles }) {
                 strokeWidth="12" 
                 strokeLinecap="square"
               />
+              {/* Speedometer needle */}
+              <line 
+                x1="50" 
+                y1="50" 
+                x2="50" 
+                y2="18" 
+                stroke="currentColor" 
+                strokeWidth="3.5" 
+                strokeLinecap="round"
+                className="text-gray-800 dark:text-slate-100 transition-transform duration-1000 ease-out"
+                style={{ 
+                  transform: `rotate(${needleRotation}deg)`, 
+                  transformOrigin: '50px 50px' 
+                }}
+              />
+              {/* Center Pivot Point */}
+              <circle 
+                cx="50" 
+                cy="50" 
+                r="6" 
+                className="fill-gray-900 stroke-white dark:fill-slate-100 dark:stroke-slate-800" 
+                strokeWidth="2"
+              />
             </svg>
-
-            {/* Rotating Needle */}
-            <div 
-              style={{ transform: `rotate(${needleRotation}deg)` }}
-              className="absolute bottom-0 w-1.5 h-16 bg-gray-800 dark:bg-slate-100 rounded-full origin-bottom transition-transform duration-1000 ease-out"
-            />
-            {/* Center Pivot Point */}
-            <div className="absolute bottom-[-4px] w-4 h-4 bg-gray-900 dark:bg-slate-50 border border-white rounded-full z-10" />
           </div>
         </div>
 
